@@ -1,16 +1,15 @@
-import React, { createContext } from 'react';
-import ReactDOM from 'react-dom';
-import colors from "./color-data";
+import React from 'react';
+import ColorProvider from "./ColorProvider"
+import { render } from "react-dom";
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-export const ColorContext = createContext();
 
-ReactDOM.render(
-  <ColorContext.Provider value={{colors}}>
+render(
+  <ColorProvider>
     <App />
-  </ColorContext.Provider>,
+  </ColorProvider>,
   document.getElementById('root')
 );
 
